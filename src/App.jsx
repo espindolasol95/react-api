@@ -9,7 +9,7 @@ function App() {
     //chiamata API con AXIOS 
       axios.get('https://lanciweb.github.io/demo/api/actors/')
       .then((response) => {
-         console.log("Dati ricevuti:", response.data); 
+         console.log(response.data); 
           setActors(response.data); //salvo i dati nello stato
 
       })
@@ -27,7 +27,7 @@ function App() {
         <div key ={index} className="col-12 col-md-6 col-lg-4">
         <div className="card h-100 shadow-sm">
         <img src={actor.image} alt= {actor.name} className="card-img-top"/>
-        <div className="card-body">
+        <div className="card-body text-center">
           <h5 className="card title">{actor.name}</h5>
           <p className='card-text'><strong>Anno di nascita:</strong>{actor.birth_year}</p>
            <p className='card-text'><strong>Filmografia:</strong>{actor.known_for}</p>
